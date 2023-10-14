@@ -1,15 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PH-Tube</title>
-    <link rel="stylesheet" href="./style/ph-tube.css">
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.2/dist/full.css" rel="stylesheet" type="text/css" />
-</head>
-<body>
-
-    <script src="./js/ph-tube.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PH-Tube</title>
+        <link rel="stylesheet" href="./style/ph-tube.css">
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.2/dist/full.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <header class="p-10">
+            <div class="navbar bg-base-100">
+                <div class="flex-1 navbar-start">
+                    <img src="./Logo.png" alt="">
+                </div>
+                <div class="navbar-center text-center">
+                    <a class="btn bg-gray-300 normal-case text-xl">Sort By View</a>
+                </div>
+                <div class="flex-none navbar-end">
+                    <div class="dropdown dropdown-end">
+                        <div class="card-actions">
+                            <button class="btn bg-[#FF1F3D] btn-block text-white">Blog</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="divider"></div> 
+        </header>
+        <main>
+            <div class="flex justify-center gap-6" id="button-container">               
+            </div>
+            <div class="grid grid-cols-4 gap-5  p-10">
+                <div class="card">
+                    <figure><img src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+                    <div class="card-body flex justify-start">
+                      <div class="flex-1">
+                        <div class="avatar-group -space-x-6">
+                            <div class="avatar">
+                              <div class="w-12">
+                                <img src="" alt="img" />
+                              </div>
+                            </div>
+                        </div>
+                      </div>  
+                      <h2 class="card-title">Shoes!</h2>
+                      <p>If a dog chews shoes whose shoes does he choose?</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="./js/ph-tube.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </body>
 </html>
+
+<!-- <button type="submit" class="btn bg-gray-200">Music</button>
+            <input type="button" value="Comedy" class="btn bg-gray-200" />
+            <input type="submit" value="Drawing" class="btn bg-gray-200" /> -->
