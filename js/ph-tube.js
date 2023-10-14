@@ -15,6 +15,29 @@ const loadCategory = async (categoryId)=> {
     const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
     const data = await response.json();
     const categoryData = data.data;
+    const cartContainer = document.getElementById('card-container');
+    categoryData.forEach((selectedCategory) => {
+        const div = document.createElement('div');
+        div.innerHTML = `
+            <div class="card">
+                <figure><img src="${selectedCategory?.thumbnail}" alt="Shoes" /></figure>
+                <div class="card-body flex justify-start">
+                    <div class="flex-1">
+                        <div class="avatar-group -space-x-6">
+                            <div class="avatar">
+                                <div class="w-12">
+                                    <img src="${selectedCategory?.authors[0]?.profile_picture}" alt="img" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                    <h2 class="card-title">${selectedCategory?.title}</h2>
+                    <p>${selectedCategory?.authors[0]?.profile_name}</p>
+                </div>
+            </div>
+        `;
+        cartContainer.appendChild(div);
+    });
     //console.log(data.data);
 }
 phTubeHandle();
