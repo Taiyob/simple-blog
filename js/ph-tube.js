@@ -16,13 +16,19 @@ const loadCategory = async (categoryId)=> {
     const data = await response.json();
     const categoryData = data.data;
     const cartContainer = document.getElementById('card-container');
+    cartContainer.innerHTML = '';
     categoryData.forEach((selectedCategory) => {
-        const div = document.createElement('div');
+        if(selectedCategory.length<0){
+            const p = document.createElement('p');
+            p.innerHTML = `<p class="text-red">No data</p>`;
+            cartContainer.appendChild(p);
+        }else{
+            const div = document.createElement('div');
         div.innerHTML = `
             <div class="card">
                 <figure><img src="${selectedCategory?.thumbnail}" alt="Shoes" /></figure>
-                <div class="card-body flex justify-start">
-                    <div class="flex-1">
+                <div class="card-body grid grid-cols-2 justify-start">
+                    <div class="">
                         <div class="avatar-group -space-x-6">
                             <div class="avatar">
                                 <div class="w-12">
@@ -31,12 +37,24 @@ const loadCategory = async (categoryId)=> {
                             </div>
                         </div>
                     </div>  
-                    <h2 class="card-title">${selectedCategory?.title}</h2>
-                    <p>${selectedCategory?.authors[0]?.profile_name}</p>
+                    <div class="">
+                        <h2 class="card-title">${selectedCategory?.title}</h2>
+                        <p>
+                            ${selectedCategory?.authors[0]?.profile_name}
+                            <span>
+                                ${selectedCategory?.authors[0]?.verified === true ? '<input type="checkbox" checked="checked" class="checkbox" />': ''}
+                            </span>
+                        </p>
+                        <a>
+                            ${selectedCategory?.others?.views} views
+                        </a>
+                    </div>
                 </div>
             </div>
         `;
         cartContainer.appendChild(div);
+        }
+        
     });
     //console.log(data.data);
 }
