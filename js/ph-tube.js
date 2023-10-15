@@ -59,3 +59,4 @@ const loadCategory = async (categoryId)=> {
     //console.log(data.data);
 }
 phTubeHandle();
+loadCategory('1000');

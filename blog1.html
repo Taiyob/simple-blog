@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="./style/ph-tube.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.2/dist/full.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header class="p-10">
+        <div class="navbar bg-base-100">
+            <div class="flex-1 navbar-start">
+                <img src="./Logo.png" alt="">
+            </div>
+            <div class="navbar-center text-center">
+                <a class="btn bg-gray-300 normal-case text-xl">Sort By View</a>
+            </div>
+            <div class="flex-none navbar-end">
+                <div class="dropdown dropdown-end">
+                    <div class="card-actions">
+                        <a href="./index.html">
+                            <button class="btn bg-[#FF1F3D] btn-block text-white">Back</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div> 
+        <!-- <div class="btn-group flex justify-center">
+            <button onclick="topics()" class="btn btn-active" id="btn-1">Topic-1</button>
+            <button onclick="topicsNxt()" class="btn" id="btn-2">Topic-2</button>
+            <button class="btn" id="btn-3">Topic-3</button>
+        </div> -->
+    </header>
+    <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900 antialiased" id="topic-2">
+        <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
+            <article class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
+                <header class="mb-4 lg:mb-6 not-format">
+                    <address class="flex items-center mb-6 not-italic">
+                        <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
+                            <img class="mr-4 w-16 h-16 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="Jese Leos">
+                            <div>
+                                <a href="#" rel="author" class="text-xl font-bold text-gray-900 dark:text-white">MD OLI</a>
+                                <p class="text-base text-gray-500 dark:text-gray-400">Web Devoloper, educator & CEO Myworld</p>
+                                <p class="text-base text-gray-500 dark:text-gray-400"><time pubdate datetime="2022-02-08" title="February 8th, 2022">Oct. 15, 2023</time></p>
+                            </div>
+                        </div>
+                    </address>
+                    <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">Undefined vs Null in Javascript</h1>
+                </header>
+                <p class="lead">
+                    In JavaScript, there are two special types of values – undefined and null. It is crucial for a beginner to understand the differences between them (null and undefined) and when to use what. Let’s find out the details about undefined and null in this tutorial.
+                </p>
+                <strong>Table of Contents</strong>
+                <ul class="list-disc">
+                    <li> 
+                        Introduction to undefined and null values in Javascript
+                    </li>
+                    <li>
+                        Undefined vs Null - The differences
+                    </li>
+                    <li>
+                        Why is null an object?
+                    </li>
+                </ul>
+                <strong>
+                    Introduction to undefined and null values
+                </strong>
+                <p>
+                    Many times we often get confused on what the difference between UNDEFINED and NULL is. Simply put, undefined means a variable has been declared but has not yet been assigned a value. undefined is a type by itself (undefined). Unassigned variables are initialized by JavaScript with a default value of undefined.
+                </p>
+                </figure>
+                <h2>Here are some examples:</h2>
+                <pre>
+                    <code class="language-html">
+                        //demonstrating usage of undefined in javascript
+                        var n;
+
+                        console.log(n);
+
+                        //undefined
+                    </code>
+                </pre>
+                <p>
+                    Here as the variable is declared but not assigned to any value, the variable by default is assigned a value of undefined.
+
+                    On the other hand, null is an object. It can be assigned to a variable as a representation of no value. JavaScript never sets a value to null. That must be done programmatically.
+
+                    For example, when you do not know the value initially you can assign a null to a variable. Let’s see an example.
+                </p>
+                <pre>
+                    <code class="language-html">
+                        //demonstrating usage of null in javascript
+                        var n = null;
+
+                        //later in your program
+
+                        n = array.slice(0, 2);
+
+                        //example
+                    </code>
+                </pre>
+                <p>
+                    Here, in the example above, the variable n is given an initial value of null. Later, in the program, the value of the variable has been calculated from an expression.
+                </p>
+                <strong class="text-4xl">Undefined vs null - the differences</strong> <br>
+                <strong>1) Data types:</strong>
+                <p>
+                    The data type of undefined is undefined whereas that of null is object. We can find the datatypes of both undefined and null using the typeof operator.
+                </p>
+                <pre>
+                    <code class="language-html">
+                        typeof undefined;
+
+                        //“undefined”
+
+                        typeof null;
+
+                        //“object”
+                    </code>
+                </pre>
+                <strong>2) In arithmetic operations</strong>
+                <p>
+                    When used in arithmetic operations, undefined will result in NaN (not a number), whereas null will be converted to 0 behind the screens.
+                </p>
+                <pre>
+                    <code class="language-html">
+                        // demonstration of arithmetic operations using undefined and null
+                        undefined + 1;
+
+                        // NaN
+
+                        null + 1;
+
+                        // 1
+                    </code>
+                </pre>
+                <pre>
+                    <code class="language-html">
+                        var p = 10000,
+
+                        //principal amount
+
+                        r = 14,
+
+                        //rate of interest
+
+                        t;
+
+                        //time period. 
+
+                        //calculate simple interest
+                        function simpleInterest() {
+
+                            var si = (p * r * t) / 100;
+
+                            return si;
+
+                        }
+
+                        simpleInterest();
+
+                        //NaN
+                    </code>
+                </pre>
+                <p>
+                    Since t is not assigned a value it is by default given a value of undefined. Hence the simple interest calculation results in NaN.
+                </p>
+                <strong>3) Undefined and null are falsy:</strong>
+                <p>
+                    When used in conditional logic both undefined and null will return false.
+                </p>
+                <pre>
+                    <code class="language-html">
+                        !!undefined;
+
+                        //false
+                        
+                        !!null;
+                        
+                        //false
+                    </code>
+                </pre>
+                <p>
+                    Here the boolean double negation operator aka the bang bang operator is used to check the boolean equivalent of a value.
+                </p>
+                <pre>
+                    <code class="language-html">
+                        //demonstrating that both undefined and null are falsy
+                        var t, a = null;
+                        
+                        if (t) {
+                        
+                            console.log('t is defined');
+                        
+                        } else if (a) {
+                        
+                            console.log('a is defined');
+                        
+                        } else {
+                        
+                            console.log('both t and a are not defined with a value');
+                        
+                        }
+                        
+                        //both t and a are not defined with a value
+                    </code>
+                </pre>
+                <p>
+                    As you can see here, both, variable t which is undefined and variable a which is see to null, return false and hence do not satisfy either of the if conditions and return the output "both t and a are not defined with a value".
+                </p>
+                <strong>4) Comparing undefined and null</strong>
+                <p>
+                    Let’s see what happens when you compare undefined and null using the JavaScript equality operators.
+                </p>
+                <pre>
+                    <code class="language-html">
+                        // comparing undefined and null
+                        undefined == null;
+
+                        //true
+
+                        undefined === null;
+
+                        //false
+                    </code>
+                </pre>
+                <p>
+                    As you can see, when the equality operator is used it compares only the values. Both undefined and null are falsy by default. So == returns true.
+
+                    But when we use the strict equality operator (===) which checks both type and value, since undefined and null are of different types (from the typeof Operator section), the strict equality operator returns false.
+
+                    To understand more about the difference between abstract and strict equality operator head over to the tutorial over here.
+                </p>
+                <strong class="text-4xl">
+                    Why is Null an object?
+                </strong>
+                <p>
+                    As promised, now let’s look as to why the type of null is an “object”. As it then indicates that null must be an object, which is not true. In fact, null is one of the primitive values in JavaScript.
+
+                    It is actually a bug in the language and unfortunately can’t be fixed that easily, as it will break the existing codebase.
+
+                    However, there is actually one logical explanation behind why null is an object in javascript.
+
+                    In the initial version of JavaScript, values were stored in 32 bit units. The first 3 bits represented the data type tag followed by the remaining bits that represented the value.
+
+                    For all objects it was 000 as the type tag bits. null was considered to be a special value in JavaScript from its very first version. null was a representation of the null pointer. However, there were no pointers in JavaScript like C. So null simply meant nothing or void and was represented by all 0’s. Hence all its 32 bits were 0’s. So whenever the JavaScrit interpreter reads null, it considers the first 3 bits as type “object”. That is why typeof null returns “object”.
+                </p>  
+                <a href="" class="flex justify-end">
+                    <button class="rounded-full btn btn-lg bg-orange-700 text-white">Next</button>
+            </article>
+        </div>
+    </main>
+
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8">
+        <div class="text-center">
+            <a href="#" class="flex justify-center items-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white">
+                <img src="./Logo.png" alt="">   
+            </a>
+            <span class="block text-sm text-center text-gray-500 dark:text-gray-400">© 2023 <a href="#" class="hover:underline">PHero™</a>. All Rights Reserved.
+            </span>
+            <ul class="flex justify-center mt-5 space-x-5">
+                <li>
+                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+                      <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
+                          <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
+                      </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+                      <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                          <path fill="currentColor" d="M12.186 8.672 18.743.947h-2.927l-5.005 5.9-4.44-5.9H0l7.434 9.876-6.986 8.23h2.927l5.434-6.4 4.82 6.4H20L12.186 8.672Zm-2.267 2.671L8.544 9.515 3.2 2.42h2.2l4.312 5.719 1.375 1.828 5.731 7.613h-2.2l-4.699-6.237Z"/>
+                      </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+                      <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z" clip-rule="evenodd"/>
+                      </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+                      <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M10 0a10 10 0 1 0 10 10A10.009 10.009 0 0 0 10 0Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.094 20.094 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM8 1.707a8.821 8.821 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.758 45.758 0 0 0 8 1.707ZM1.642 8.262a8.57 8.57 0 0 1 4.73-5.981A53.998 53.998 0 0 1 9.54 7.222a32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.64 31.64 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM10 18.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 13.113 11a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z" clip-rule="evenodd"/>
+                      </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </footer>    
+    </main>
+    <script src="./js/blog.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+</html>
