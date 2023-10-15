@@ -19,13 +19,12 @@ const loadCategory = async (categoryId)=> {
     cartContainer.innerHTML = '';
     if(categoryData.length <= 0){
         const p = document.createElement('p');
-        cartContainer.classList.remove('grid');
-        p.classList.add('flex');
-        p.classList.add('justify-center');
+        // cartContainer.classList.remove('grid');
+        // p.classList.add('flex');
+        // p.classList.add('justify-center');
         p.innerHTML = `
-            <a class="text-white text-5xl font-font-bold">
-                <img src="../Frame 3.png" alt="images">
-                
+            <a class="text-white text-5xl font-font-bold px-40 w-full">
+                <img src="../Frame 3.png" alt="images" >               
             </a>
         `;
         cartContainer.appendChild(p);
