@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="./style/ph-tube.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.2/dist/full.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header class="p-10">
+        <div class="navbar bg-base-100">
+            <div class="flex-1 navbar-start">
+                <img src="./Logo.png" alt="">
+            </div>
+            <div class="navbar-center text-center">
+                <a class="btn bg-gray-300 normal-case text-xl">Sort By View</a>
+            </div>
+            <div class="flex-none navbar-end">
+                <div class="dropdown dropdown-end">
+                    <div class="card-actions">
+                        <a href="./index.html">
+                            <button class="btn bg-[#FF1F3D] btn-block text-white">Back</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div> 
+        <!-- <div class="btn-group flex justify-center">
+            <button onclick="topics()" class="btn btn-active" id="btn-1">Topic-1</button>
+            <button onclick="topicsNxt()" class="btn" id="btn-2">Topic-2</button>
+            <button class="btn" id="btn-3">Topic-3</button>
+        </div> -->
+    </header>
+    <main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900 antialiased" id="topic-2">
+        <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
+            <article class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
+                <header class="mb-4 lg:mb-6 not-format">
+                    <address class="flex items-center mb-6 not-italic">
+                        <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
+                            <img class="mr-4 w-16 h-16 rounded-full" src="./me.jpg" alt="Jese Leos">
+                            <div>
+                                <a href="#" rel="author" class="text-xl font-bold text-gray-900 dark:text-white">MD OLI</a>
+                                <p class="text-base text-gray-500 dark:text-gray-400">Web Devoloper, educator & CEO Myworld</p>
+                                <p class="text-base text-gray-500 dark:text-gray-400"><time pubdate datetime="2022-02-08" title="February 8th, 2022">Oct. 15, 2023</time></p>
+                            </div>
+                        </div>
+                    </address>
+                    <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">What is a RESTful API?</h1>
+                </header>
+                <strong>What is RESTful API?</strong>
+                <p>
+                    RESTful API is an interface that two computer systems use to exchange information securely over the internet. Most business applications have to communicate with other internal and third-party applications to perform various tasks. For example, to generate monthly payslips, your internal accounts system has to share data with your customer's banking system to automate invoicing and communicate with an internal timesheet application. RESTful APIs support this information exchange because they follow secure, reliable, and efficient software communication standards.
+                </p>
+                <strong>
+                    What is an API?
+                </strong>
+                <p>
+                    An application programming interface (API) defines the rules that you must follow to communicate with other software systems. Developers expose or create APIs so that other applications can communicate with their applications programmatically. For example, the timesheet application exposes an API that asks for an employee's full name and a range of dates. When it receives this information, it internally processes the employee's timesheet and returns the number of hours worked in that date range.
+
+                    You can think of a web API as a gateway between clients and resources on the web.
+                </p>
+                </figure>
+                <strong>Clients</strong>
+                <p>
+                    Clients are users who want to access information from the web. The client can be a person or a software system that uses the API. For example, developers can write programs that access weather data from a weather system. Or you can access the same data from your browser when you visit the weather website directly.
+                </p>
+                <strong>Resources</strong>
+                <p>
+                    Resources are the information that different applications provide to their clients. Resources can be images, videos, text, numbers, or any type of data. The machine that gives the resource to the client is also called the server. Organizations use APIs to share resources and provide web services while maintaining security, control, and authentication. In addition, APIs help them to determine which clients get access to specific internal resources.
+                </p>
+                <strong>What is REST?</strong>
+                <p>
+                    Representational State Transfer (REST) is a software architecture that imposes conditions on how an API should work. REST was initially created as a guideline to manage communication on a complex network like the internet. You can use REST-based architecture to support high-performing and reliable communication at scale. You can easily implement and modify it, bringing visibility and cross-platform portability to any API system.
+
+                    API developers can design APIs using several different architectures. APIs that follow the REST architectural style are called REST APIs. Web services that implement REST architecture are called RESTful web services. The term RESTful API generally refers to RESTful web APIs. However, you can use the terms REST API and RESTful API interchangeably.
+
+                    The following are some of the principles of the REST architectural style:
+                </p>
+                <strong class="text-4xl">Uniform interface</strong> <br>
+                <p>
+                    The uniform interface is fundamental to the design of any RESTful webservice. It indicates that the server transfers information in a standard format. The formatted resource is called a representation in REST. This format can be different from the internal representation of the resource on the server application. For example, the server can store data as text but send it in an HTML representation format.
+                </p>
+                <p>
+                    Uniform interface imposes four architectural constraints:
+                </p>
+                <ul class="list-decimal">
+                    <li>Requests should identify resources. They do so by using a uniform resource identifier.</li>
+                    <li>Clients have enough information in the resource representation to modify or delete the resource if they want to. The server meets this condition by sending metadata that describes the resource further.</li>
+                    <li>Clients receive information about how to process the representation further. The server achieves this by sending self-descriptive messages that contain metadata about how the client can best use them.</li>
+                    <li>Clients receive information about all other related resources they need to complete a task. The server achieves this by sending hyperlinks in the representation so that clients can dynamically discover more resources.</li>
+                </ul>
+                <strong>Statelessness</strong>
+                <p>
+                    n REST architecture, statelessness refers to a communication method in which the server completes every client request independently of all previous requests. Clients can request resources in any order, and every request is stateless or isolated from other requests. This REST API design constraint implies that the server can completely understand and fulfill the request every time. 
+                </p>
+                <strong>Layered system</strong>
+                <p>
+                    In a layered system architecture, the client can connect to other authorized intermediaries between the client and server, and it will still receive responses from the server. Servers can also pass on requests to other servers. You can design your RESTful web service to run on several servers with multiple layers such as security, application, and business logic, working together to fulfill client requests. These layers remain invisible to the client.
+                </p>
+                <strong>Cacheability</strong>
+                <p>
+                    RESTful web services support caching, which is the process of storing some responses on the client or on an intermediary to improve server response time. For example, suppose that you visit a website that has common header and footer images on every page. Every time you visit a new website page, the server must resend the same images. To avoid this, the client caches or stores these images after the first response and then uses the images directly from the cache. RESTful web services control caching by using API responses that define themselves as cacheable or noncacheable.
+                </p>
+                <strong>Code on demand</strong>
+                <p>
+                    In REST architectural style, servers can temporarily extend or customize client functionality by transferring software programming code to the client. For example, when you fill a registration form on any website, your browser immediately highlights any mistakes you make, such as incorrect phone numbers. It can do this because of the code sent by the server.
+                </p>
+                <strong>What are the benefits of RESTful APIs?</strong>
+                <p>
+                    RESTful APIs include the following benefits:
+                </p>
+                <strong>Scalability</strong>
+                <p>
+                    Systems that implement REST APIs can scale efficiently because REST optimizes client-server interactions. Statelessness removes server load because the server does not have to retain past client request information. Well-managed caching partially or completely eliminates some client-server interactions. All these features support scalability without causing communication bottlenecks that reduce performance.
+                </p>
+                <strong>Flexibility</strong>
+                <p>
+                    RESTful web services support total client-server separation. They simplify and decouple various server components so that each part can evolve independently. Platform or technology changes at the server application do not affect the client application. The ability to layer application functions increases flexibility even further. For example, developers can make changes to the database layer without rewriting the application logic.
+                </p>
+                <strong>
+                    Independence
+                </strong>
+                <p>
+                    REST APIs are independent of the technology used. You can write both client and server applications in various programming languages without affecting the API design. You can also change the underlying technology on either side without affecting the communication.
+
+                    In the initial version of JavaScript, values were stored in 32 bit units. The first 3 bits represented the data type tag followed by the remaining bits that represented the value.
+                </p>  
+                <div class="flex justify-end mt-10">
+                    <a href="./blog.html">
+                        <button class="rounded-full btn btn-lg bg-orange-700 text-white">Scope</button>
+                    </a>    
+                    <a href="./blog1.html">
+                        <button class="rounded-full btn btn-lg bg-orange-700 text-white">Null & Undefined</button>
+                    </a> 
+                </div>
+            </article>
+        </div>
+    </main>
+
+        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8">
+        <div class="text-center">
+            <a href="#" class="flex justify-center items-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white">
+                <img src="./Logo.png" alt="">   
+            </a>
+            <span class="block text-sm text-center text-gray-500 dark:text-gray-400">© 2023 <a href="#" class="hover:underline">PHero™</a>. All Rights Reserved.
+            </span>
+            <ul class="flex justify-center mt-5 space-x-5">
+                <li>
+                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+                      <svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
+                          <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
+                      </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+                      <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                          <path fill="currentColor" d="M12.186 8.672 18.743.947h-2.927l-5.005 5.9-4.44-5.9H0l7.434 9.876-6.986 8.23h2.927l5.434-6.4 4.82 6.4H20L12.186 8.672Zm-2.267 2.671L8.544 9.515 3.2 2.42h2.2l4.312 5.719 1.375 1.828 5.731 7.613h-2.2l-4.699-6.237Z"/>
+                      </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+                      <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z" clip-rule="evenodd"/>
+                      </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
+                      <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M10 0a10 10 0 1 0 10 10A10.009 10.009 0 0 0 10 0Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.094 20.094 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM8 1.707a8.821 8.821 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.758 45.758 0 0 0 8 1.707ZM1.642 8.262a8.57 8.57 0 0 1 4.73-5.981A53.998 53.998 0 0 1 9.54 7.222a32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.64 31.64 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM10 18.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 13.113 11a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z" clip-rule="evenodd"/>
+                      </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </footer>    
+    </main>
+    <script src="./js/blog.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+</html>
