@@ -17,12 +17,20 @@ const loadCategory = async (categoryId)=> {
     const categoryData = data.data;
     const cartContainer = document.getElementById('card-container');
     cartContainer.innerHTML = '';
-    categoryData.forEach((selectedCategory) => {
-        if(selectedCategory.length<0){
-            const p = document.createElement('p');
-            p.innerHTML = `<p class="text-red">No data</p>`;
-            cartContainer.appendChild(p);
-        }else{
+    if(categoryData.length <= 0){
+        const p = document.createElement('p');
+        cartContainer.classList.remove('grid');
+        p.classList.add('flex');
+        p.classList.add('justify-center');
+        p.innerHTML = `
+            <a class="text-white text-5xl font-font-bold">
+                <img src="../Frame 3.png" alt="images">
+                
+            </a>
+        `;
+        cartContainer.appendChild(p);
+    }else{
+        categoryData.forEach((selectedCategory) => {
             const div = document.createElement('div');
         div.innerHTML = `
             <div class="card">
@@ -52,11 +60,16 @@ const loadCategory = async (categoryId)=> {
                 </div>
             </div>
         `;
-        cartContainer.appendChild(div);
-        }
-        
+        cartContainer.appendChild(div);   
     });
-    //console.log(data.data);
+    }  
 }
+document.getElementById('sorting').addEventListener('click',async function (){
+    const response = await fetch(`https://openapi.programming-hero.com/api/videos/categories`);
+    const data = await response.json();
+    const rawData = data.data;
+    console.log(rawData);
+    
+});
 phTubeHandle();
 loadCategory('1000');
